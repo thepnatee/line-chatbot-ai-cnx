@@ -1,5 +1,6 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const line = require('../util/line.util');
+const messages = require('../message/messages');
 const crypto = require('crypto');
 
 exports.receive = onRequest({ invoker: "public" },async (request, response) => {

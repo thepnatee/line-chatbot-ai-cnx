@@ -6,4 +6,4 @@ setGlobalOptions({
 })
 
 exports.webhook = require('./src/webhook')
-exports.line = require('./src/event')
+// exports.line = require('./src/event')
