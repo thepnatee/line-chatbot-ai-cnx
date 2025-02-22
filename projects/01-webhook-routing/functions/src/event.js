@@ -45,10 +45,10 @@ exports.signature = onRequest({ invoker: "public" },async (request, response) =>
     }
 
     // TODO:Uncommentt this line to enable signature verification
-    // const signature = crypto.createHmac('SHA256', process.env.LINE_MESSAGING_CHANNEL_SECRET).update(request.rawBody).digest('base64').toString();
-    // if (request.headers['x-line-signature'] !== signature) {
-    //     return res.status(401).send('Unauthorized');
-    // }
+    const signature = crypto.createHmac('SHA256', process.env.LINE_MESSAGING_CHANNEL_SECRET).update(request.rawBody).digest('base64').toString();
+    if (request.headers['x-line-signature'] !== signature) {
+        return res.status(401).send('Unauthorized');
+    }
 
     const events = request.body.events
 

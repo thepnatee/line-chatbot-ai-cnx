@@ -12,6 +12,7 @@ exports.receive = onRequest({ invoker: "public" }, async (request, response) => 
 
 
     const events = request.body.events
+    
     for (const event of events) {
 
         console.log(JSON.stringify(event));
